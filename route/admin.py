@@ -123,3 +123,4 @@ def get_user(id):
 @admin.route("/upload/image/<filename>")
 def uploaded_file(filename):
     return send_from_directory(admin.config['UPLOAD_FOLDER'],filename)
+

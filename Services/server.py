@@ -7,7 +7,7 @@
 @Author  ：Ran
 @Date    ：2024/12/21 17:07 
 '''
-from Utils.singleton import Singleton
+from utils.singleton import Singleton
 from Services.db_service import DBService
 from Services.user_service import UserService
 

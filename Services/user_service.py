@@ -7,7 +7,7 @@
 @Author  ：Ran
 @Date    ：2024/12/18 21:34 
 '''
-from Utils.singleton import Singleton
+from utils.singleton import Singleton
 from Services.db_service import DBService
 from loguru import logger
 import os
@@ -84,6 +84,13 @@ class UserService(metaclass=Singleton):
         text = "评论上传失败"
         return False,text
 
+    def onUserLike(self,uid,post_id):
+        result = DBService().insert_like(uid,post_id)
+        if result:
+            text = "点赞成功"
+            return True,text
+        text = "点赞失败"
+        return False,text
 
 
 

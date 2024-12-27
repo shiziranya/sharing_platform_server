@@ -11,7 +11,7 @@ from Managers.db_manager import DBManager
 
 
 
-from Utils.singleton import Singleton
+from utils.singleton import Singleton
 import pymysql
 from pymysql.cursors import DictCursor
 from loguru import logger
@@ -73,6 +73,16 @@ class DBService(metaclass=Singleton):
             print(f"插入失败: {e}")
             return False
 
+    def insert_like(self,uid,post_id):
+        query = "INSERT INTO post_like (uid,post_id) VALUES (%s, %s);"
+        try:
+            rows_affected = self.db_manager.execute_update(query, (uid,post_id))
+            return rows_affected
+        except Exception as e:
+            print(f"插入失败: {e}")
+            return False
+
+
     def get_posts(self):
         query = "SELECT * FROM post;"
         try:
@@ -115,4 +125,5 @@ class DBService(metaclass=Singleton):
         except Exception as e:
             print(f"查询失败: {e}")
             return None
+
 

@@ -261,3 +261,9 @@ def upload_comment():
         }
     return jsonify(response)
 
+@user.route("/like",methods = ["POST"])
+def upload_like():
+    data = request.form
+    uid = data.get("uid")
+    post_id = data.get("post_id")
+    result,text = UserService().onUserLike(uid,post_id)

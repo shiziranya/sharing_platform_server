@@ -7,7 +7,7 @@
 @Author  ：Ran
 @Date    ：2024/12/18 21:33 
 '''
-from Utils.singleton import Singleton
+from utils.singleton import Singleton
 import pymysql
 from pymysql.cursors import DictCursor
 from loguru import logger

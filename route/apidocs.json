@@ -1,0 +1,644 @@
+{
+  "definitions": {},
+  "info": {
+    "description": "powered by Flasgger",
+    "termsOfService": "/tos",
+    "title": "A swagger API",
+    "version": "0.0.1"
+  },
+  "paths": {
+    "/admin/get_post": {
+      "get": {
+        "description": "This API retrieves all posts from the database.",
+        "responses": {
+          "200": {
+            "description": "Posts retrieved successfully",
+            "schema": {
+              "properties": {
+                "code": {
+                  "example": 200,
+                  "type": "integer"
+                },
+                "example": {
+                  "code": 200,
+                  "message": [
+                    {
+                      "anger": 123,
+                      "comment": [
+                        {
+                          "angry": 4,
+                          "content": "无语",
+                          "id": 2,
+                          "post_id": 1,
+                          "uid": 5
+                        },
+                        {
+                          "angry": 4,
+                          "content": "wocao",
+                          "id": 3,
+                          "post_id": 1,
+                          "uid": 5
+                        }
+                      ],
+                      "content": "content",
+                      "id": 1,
+                      "image": [
+                        "aaa-0.png",
+                        "aaa-1.png"
+                      ],
+                      "like": [],
+                      "title": "aaa",
+                      "uid": 4
+                    }
+                  ]
+                },
+                "message": {
+                  "items": {
+                    "properties": {
+                      "anger": {
+                        "example": 1,
+                        "type": "integer"
+                      },
+                      "comment": {
+                        "items": {
+                          "properties": {
+                            "angry": {
+                              "example": 4,
+                              "type": "integer"
+                            },
+                            "content": {
+                              "example": "无语",
+                              "type": "string"
+                            },
+                            "id": {
+                              "example": 2,
+                              "type": "integer"
+                            },
+                            "post_id": {
+                              "example": 1,
+                              "type": "integer"
+                            },
+                            "uid": {
+                              "example": 5,
+                              "type": "integer"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "type": "array"
+                      },
+                      "content": {
+                        "example": "content",
+                        "type": "string"
+                      },
+                      "id": {
+                        "example": 1,
+                        "type": "integer"
+                      },
+                      "image": {
+                        "items": {
+                          "example": "aaa-0.png",
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      "like": {
+                        "example": [],
+                        "items": {},
+                        "type": "array"
+                      },
+                      "title": {
+                        "example": "aaa",
+                        "type": "string"
+                      },
+                      "uid": {
+                        "example": 4,
+                        "type": "integer"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          }
+        },
+        "summary": "Get All Posts API"
+      }
+    },
+    "/admin/get_post/{id}": {
+      "get": {
+        "description": "This API retrieves user's posts by user ID",
+        "parameters": [
+          {
+            "description": "The userID of the posts to retrieve.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Post retrieved successfully",
+            "schema": {
+              "properties": {
+                "code": {
+                  "example": 200,
+                  "type": "integer"
+                },
+                "example": {
+                  "code": 200,
+                  "message": [
+                    {
+                      "anger": 123,
+                      "comment": [
+                        {
+                          "angry": 4,
+                          "content": "无语",
+                          "id": 2,
+                          "post_id": 1,
+                          "uid": 5
+                        },
+                        {
+                          "angry": 4,
+                          "content": "wocao",
+                          "id": 3,
+                          "post_id": 1,
+                          "uid": 5
+                        }
+                      ],
+                      "content": "content",
+                      "id": 1,
+                      "image": [
+                        "aaa-0.png",
+                        "aaa-1.png"
+                      ],
+                      "like": [],
+                      "title": "aaa",
+                      "uid": 4
+                    }
+                  ]
+                },
+                "message": {
+                  "items": {
+                    "properties": {
+                      "anger": {
+                        "example": 10,
+                        "type": "integer"
+                      },
+                      "comment": {
+                        "items": {
+                          "properties": {
+                            "angry": {
+                              "example": 4,
+                              "type": "integer"
+                            },
+                            "content": {
+                              "example": "无语",
+                              "type": "string"
+                            },
+                            "id": {
+                              "example": 2,
+                              "type": "integer"
+                            },
+                            "post_id": {
+                              "example": 1,
+                              "type": "integer"
+                            },
+                            "uid": {
+                              "example": 5,
+                              "type": "integer"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "type": "array"
+                      },
+                      "content": {
+                        "example": "你好",
+                        "type": "string"
+                      },
+                      "id": {
+                        "example": 1,
+                        "type": "integer"
+                      },
+                      "image": {
+                        "items": {
+                          "example": "aaa-0.png",
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      "like": {
+                        "example": [],
+                        "items": {},
+                        "type": "array"
+                      },
+                      "title": {
+                        "example": "aaa",
+                        "type": "string"
+                      },
+                      "uid": {
+                        "example": 4,
+                        "type": "integer"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          }
+        },
+        "summary": "Get User's Posts API"
+      }
+    },
+    "/admin/get_user/{id}": {
+      "get": {
+        "description": "This API retrieves a specific user by their ID from the database.",
+        "parameters": [
+          {
+            "description": "The ID of the user to retrieve.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User retrieved successfully",
+            "schema": {
+              "properties": {
+                "code": {
+                  "example": 200,
+                  "type": "integer"
+                },
+                "example": {
+                  "code": 200,
+                  "message": [
+                    {
+                      "id": 4,
+                      "profile": "",
+                      "username": "ran"
+                    }
+                  ]
+                },
+                "message": {
+                  "items": {
+                    "properties": {
+                      "id": {
+                        "example": 4,
+                        "type": "integer"
+                      },
+                      "profile": {
+                        "example": "",
+                        "type": "string"
+                      },
+                      "username": {
+                        "example": "ran",
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "500": {
+            "description": "User not found",
+            "schema": {
+              "properties": {
+                "code": {
+                  "example": 500,
+                  "type": "integer"
+                },
+                "message": {
+                  "example": "用户id不存在",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          }
+        },
+        "summary": "Get User by ID API"
+      }
+    },
+    "/admin/image/{filename}": {
+      "get": {
+        "description": "This API retrieves an image file by its filename",
+        "parameters": [
+          {
+            "description": "The name of the image file to retrieve.",
+            "in": "path",
+            "name": "filename",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "image/*": {
+                "schema": {
+                  "format": "binary",
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Image file retrieved successfully"
+          },
+          "404": {
+            "description": "Image file not found",
+            "schema": {
+              "properties": {
+                "code": {
+                  "example": 404,
+                  "type": "integer"
+                },
+                "message": {
+                  "example": "Image not found",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          }
+        },
+        "summary": "Get Image by Filename API"
+      }
+    },
+    "/user/comment": {
+      "post": {
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "description": "This API allows a user to upload a comment by providing a user ID, anger level, content, and post ID.",
+        "parameters": [
+          {
+            "description": "The user ID of the user uploading the comment.",
+            "in": "formData",
+            "name": "uid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The anger level of the comment (as a string).",
+            "in": "formData",
+            "name": "angry",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The content of the comment.",
+            "in": "formData",
+            "name": "content",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The ID of the post to which the comment is being added.",
+            "in": "formData",
+            "name": "post_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Comment uploaded successfully",
+            "schema": {
+              "properties": {
+                "code": {
+                  "example": 200,
+                  "type": "integer"
+                },
+                "message": {
+                  "example": "Comment uploaded successfully",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "500": {
+            "description": "Comment upload failed",
+            "schema": {
+              "properties": {
+                "code": {
+                  "example": 500,
+                  "type": "integer"
+                },
+                "message": {
+                  "example": "Comment upload failed: Invalid post ID",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          }
+        },
+        "summary": "User Comment Upload API"
+      }
+    },
+    "/user/login": {
+      "post": {
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "description": "This API allows a user to log in by providing a username and password.",
+        "parameters": [
+          {
+            "description": "The username of the user.",
+            "in": "formData",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The password of the user.",
+            "in": "formData",
+            "name": "password",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User logged in successfully",
+            "schema": {
+              "properties": {
+                "code": {
+                  "example": 200,
+                  "type": "integer"
+                },
+                "message": {
+                  "example": "User logged in successfully",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "500": {
+            "description": "Login failed",
+            "schema": {
+              "properties": {
+                "code": {
+                  "example": 500,
+                  "type": "integer"
+                },
+                "message": {
+                  "example": "Login failed: Invalid credentials",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          }
+        },
+        "summary": "User Login API"
+      }
+    },
+    "/user/register": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "description": "This API allows a new user to register by providing a username, password, and profile images.",
+        "parameters": [
+          {
+            "description": "The username of the user.",
+            "in": "formData",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The password of the user.",
+            "in": "formData",
+            "name": "password",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Profile images of the user. Can be multiple files.",
+            "in": "formData",
+            "name": "profile",
+            "required": true,
+            "type": "file"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User registered successfully",
+            "schema": {
+              "properties": {
+                "code": {
+                  "example": 200,
+                  "type": "integer"
+                },
+                "message": {
+                  "example": "User registered successfully",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "500": {
+            "description": "Registration failed",
+            "schema": {
+              "properties": {
+                "code": {
+                  "example": 500,
+                  "type": "integer"
+                },
+                "message": {
+                  "example": "Registration failed: Username already exists",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          }
+        },
+        "summary": "User Registration API"
+      }
+    },
+    "/user/upload": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "description": "This API allows a user to upload a post by providing a title, content, anger level, user ID, and images.",
+        "parameters": [
+          {
+            "description": "The title of the post.",
+            "in": "formData",
+            "name": "title",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The content of the post.",
+            "in": "formData",
+            "name": "content",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The anger level of the post (as an integer).",
+            "in": "formData",
+            "name": "anger",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "The user ID of the user uploading the post.",
+            "in": "formData",
+            "name": "uid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The images to be uploaded with the post. Can be multiple files.",
+            "in": "formData",
+            "name": "file_imgs",
+            "required": true,
+            "type": "file"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Post uploaded successfully",
+            "schema": {
+              "properties": {
+                "code": {
+                  "example": 200,
+                  "type": "integer"
+                },
+                "message": {
+                  "example": "分享上传成功",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          }
+        },
+        "summary": "User Post Upload API"
+      }
+    }
+  },
+  "swagger": "2.0"
+}
