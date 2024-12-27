@@ -16,12 +16,14 @@ from route.admin import admin
 
 server = Server()
 
-
 app = Flask(__name__)
+Swagger(app)
 app.config['UPLOAD_FOLDER'] = "upload/image"
-app.register_blueprint(user)
-app.register_blueprint(admin)
-swagger = Swagger(app)
+app.register_blueprint(user,url_prefix='/user')
+app.register_blueprint(admin,url_prefix='/admin')
+@app.route("/id")
+def chat():
+    return "hello"
 
 if __name__ =="__main__":
     app.run()
